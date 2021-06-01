@@ -39,8 +39,8 @@ class HomeState extends State<Home>{
           ),
        body: Container(
          padding:EdgeInsets.fromLTRB(10, 15, 10, 0),
-         width:2280,
-         height: 1080,
+         width:MediaQuery.of(context).size.width,
+         height: MediaQuery.of(context).size.height,
          decoration: BoxDecoration(
            gradient:LinearGradient(colors:[Colors.purple.shade800, Colors.deepPurpleAccent.shade400],
            begin:Alignment.topLeft ,
@@ -49,9 +49,17 @@ class HomeState extends State<Home>{
 
           
           ),
-          child: Text("      Bienvenidos a mi aplicacion, esta tiene la finalidad de hacer calculos para integracion, recuerden usar unidades del sistema internacional para obtener los resultados correctos",
-          style: TextStyle(fontSize: 20,color: Colors.white),
-          ),
+          child:Column(children:<Widget> [
+            RichText(text:TextSpan(
+            style:TextStyle(color: Colors.white) ,
+            children:<TextSpan>[
+              TextSpan(text: "              Bienvenidos              ", style: TextStyle(fontSize:30)),
+              TextSpan(text:"Esta aplicacion tiene como fin facilitar la resolucion de ejercicios de integracion              ",style: TextStyle(fontSize:20)),
+              TextSpan(text: "Recuerden usar el S.I.", style: TextStyle(fontSize:20,fontWeight: FontWeight.bold))
+            ] 
+          ) ),
+          //termina el richtext
+          ],)
        ),
         
         

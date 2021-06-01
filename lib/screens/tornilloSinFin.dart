@@ -15,30 +15,42 @@ class _TornilloSinFin extends State<TornilloSinFin>{
    
    return Scaffold(
 
-     appBar: AppBar(title:Center(child:Text(
-       "Tornillo sin fin                  ", style: TextStyle(
+     appBar: AppBar(title:Center(child:
+     Text(
+       "Tornillo sin fin", 
+       textAlign: TextAlign.start,
+       style: TextStyle(
          color: Colors.white,
-         fontSize: 30),
+         fontSize: MediaQuery.of(context).size.width*(70/1080)),
      ),) ,),
 
     body: Stack(children: <Widget>[
       //fondo
       Container(
-        width: 2280,
-        height: 662,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(gradient: LinearGradient(colors:[Colors.purple.shade800, Colors.deepPurpleAccent.shade400] ,
         begin:Alignment.topRight,
         end:Alignment.bottomLeft ,
         )
         ),
+        
       ),
-      //datos
-      Text("   *  Ingrese aqui los datos",
+     //margen 
+      Container(
+        margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+        height: 200,
+        child:       Text("   *  Ingrese aqui los datos",
+      textAlign: TextAlign.center,
       style:TextStyle(
         color: Colors.white,
         fontSize: 20,
       ),),
+      ),
+       //datos
+
       Container(
+        alignment: Alignment.center,
         width: 300,
         height: 300,
         margin: EdgeInsets.fromLTRB(50, 40, 0, 0),
@@ -50,7 +62,8 @@ class _TornilloSinFin extends State<TornilloSinFin>{
 
       )
 
-    ],),
+    ],
+  ),
    );
   }
 
